@@ -1,0 +1,425 @@
+@import "variablas";
+@import "mixins";
+body {
+    @include Overal;
+}
+
+// PreLoader Style
+.preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $mainWhite;
+    z-index: 9999;
+}
+
+.hidePreloader {
+    display: none !important;
+}
+
+// Navbar Style
+.nav-link {
+    color: $mainBlack;
+    text-transform: capitalize;
+    &:hover {
+        color: $mainBlue;
+    }
+}
+
+.navbar {
+    background-color: $mainWhite;
+}
+
+.navbar-toggler {
+    color: $mainBlue !important;
+    font-size: 1.7rem;
+}
+
+.Nav-icon {
+    font-size: 1.5rem !important;
+    color: $mainBlue !important;
+    transition: all 0.5s ease-in;
+    &:hover {
+        color: $mainBlack !important;
+    }
+}
+
+// End Navbar Style
+// header style
+.height-max {
+    min-height: calc(100vh - 76px);
+    background-image: url(../img/headerBcg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    animation-name: Zoom;
+    animation-duration: 20s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+    animation: Zoom 20s ease-in-out 5s infinite;
+}
+
+@keyframes Zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2) translateX(-5%);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.header {
+    color: $mainWhite;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+    overflow: hidden;
+}
+
+.title-heading {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    border-left: 0.3rem solid $mainBlue;
+}
+
+.title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    @include md {
+        font-size: 3rem;
+    }
+}
+
+.titile-icon {
+    color: $mainBlue;
+    text-decoration: none !important;
+    transition: all 1s ease-in;
+    &:hover {
+        color: $mainPrimary;
+    }
+}
+
+// End header style
+// Skills
+.section-title-special {
+    background-color: $transparentBlue;
+    color: $mainWhite;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    padding: 0.5rem 2rem !important;
+}
+
+.skill-icon {
+    background: $mainGrey;
+    font-size: 3rem;
+    color: $mainYellow;
+    &:hover {
+        color: $mainYellow;
+    }
+}
+
+.skill-underline {
+    width: 4rem;
+    height: 0.3rem;
+    background-color: $transparentBlue;
+    margin: 1rem auto;
+}
+
+.skill-caption {
+    margin: 0 auto;
+}
+
+.skills-header,
+.section-title-special {
+    font-size: 2.5rem !important;
+    @include sm {
+        font-size: 1.5rem !important;
+    }
+}
+
+// End skill
+* {
+    @include sm {
+        font-size: 0.9rem;
+    }
+}
+
+// Inventory
+.inventory {
+    background-color: $mainGrey;
+}
+
+.car-card {
+    border-radius: 0 !important;
+}
+
+.car-img {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.car-value {
+    color: $mainWhite;
+    background-color: $mainBlue;
+    padding: 0.8rem;
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+    transition: all 1s linear;
+    &:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        background-color: $mainPrimary;
+    }
+}
+
+.car-info {
+    background-color: $mainWhite;
+}
+
+// End  Inventory
+// question Style
+.question {
+    background: url(../img/questionBcg.jpeg) center/cover fixed no-repeat;
+}
+
+.question-gray {
+    background: rgba(79, 109, 122, 0.75);
+}
+
+.question-yellow {
+    background: rgba(277, 181, 5, 0.75);
+}
+
+#question-icon {
+    font-size: 4rem;
+    color: $mainBlue;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        transform: translateY(-13%);
+        color: $mainPrimary;
+    }
+}
+
+.question-info {
+    color: $mainWhite;
+}
+
+// Feature style
+.feature {
+    background-color: $mainGrey;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    color: $mainBlue;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.feature-item {
+    background-color: $mainWhite;
+    border-radius: 0.5rem;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+        transition: all 1s ease-in-out;
+        transform: scale(1.05);
+    }
+}
+
+.img-container {
+    background-color: $mainBlue;
+    position: relative;
+    overflow: hidden;
+    transition: all 2s;
+}
+
+.feature-photo {
+    transition: all 1s ease-in-out;
+}
+
+.img-container:hover .feature-photo+ {
+    transform: scale(1.3);
+    opacity: 0.5;
+}
+
+.feature-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: $mainBlack;
+    opacity: 0;
+    transition: 2s all ease-in-out;
+    &:hover {
+        color: $mainWhite;
+    }
+}
+
+.img-container:hover .feature-link {
+    opacity: 1;
+}
+
+.img-container:hover {
+    opacity: 0.6;
+}
+
+// End Feature style
+// Gallery Style
+.gallery-item {
+    background-color: $mainYellow;
+    position: relative;
+    cursor: pointer;
+    &:hover .gallery-img {
+        opacity: .6;
+    }
+    &:hover::after {
+        transform: scale(1);
+    }
+    &:after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        outline: .2rem solid $mainWhite;
+        outline-offset: -2rem;
+        transform: scale(0);
+        transition: all 1s ease-in-out;
+    }
+}
+
+.gallery-img {
+    transition: all 1s ease-in-out;
+}
+
+// contact Style
+.contact {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/style/img/headerBcg.jpeg) center/cover fixed no-repeat;
+    font-size: 1.5rem;
+    color: $mainYellow;
+}
+
+.contact-input::placeholder {
+    color: $mainYellow !important;
+}
+
+.contact-input {
+    color: $mainYellow;
+    background: transparent;
+    border-color: $mainYellow;
+    font-size: 1.5rem;
+    vertical-align: center;
+    &:focus {
+        border-color: $mainYellow;
+        color: $mainYellow;
+        background: transparent;
+    }
+}
+
+.btn {
+    &:hover {
+        color: $mainWhite;
+    }
+}
+
+// Services section
+.Services {
+    position: relative;
+    min-height: 85vh;
+    min-width: 90%;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%)
+}
+
+.video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.video-item {
+    opacity: .5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $mainPrimary;
+    z-index: -3;
+}
+
+.services-box {
+    background-color: $mainBlack;
+    transition: all 1s ease-in-out;
+    &:hover {
+        background-color: $mainWhite;
+        cursor: pointer;
+    }
+    &:hover .services-info {
+        color: $mainBlack;
+    }
+}
+
+.service {
+    transition: all 1s linear;
+    &:hover {
+        padding-left: 1rem;
+    }
+}
+
+.services-icon {
+    font-size: 4rem;
+    color: $mainYellow;
+}
+
+.services-info {
+    color: $mainWhite;
+}
+
+// Quotes Style
+.customer-card {
+    margin-top: -4rem !important;
+    color: $mainGrey;
+}
+
+.customer-img {
+    border: .4rem solid $mainWhite;
+}
+
+.customer-name {
+    color: $mainBlue;
+}
+
+.customer-quote {
+    min-width: 90% !important;
+}
+
+.quote-icon {
+    font-size: 2rem;
+}
+
+.footer {
+    background-color: $mainBlack;
+}
+
+.footer-icon {
+    color: $mainYellow;
+    font-size: 1.5rem;
+    transition: all 1.5s ease-in-out;
+    &:hover {
+        color: $mainPrimary;
+    }
+}
